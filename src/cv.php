@@ -49,14 +49,6 @@ if (!empty($_POST)) {
 
     $interests = $_POST['interests'];
 
-    try {
-        $a = between_validator(188, ['fdf', 0x539], 0);
-        echo 'result: ' . $a;
-    }
-    catch (Exception $e) {
-        echo 'Вы вообще не правы: ' . $e->getMessage();
-    }
-
 //    echo "<pre>";
 //    var_dump($_POST);
 //    echo "</pre>";

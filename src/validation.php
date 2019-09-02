@@ -115,6 +115,27 @@ function between_validator($number, array $array, bool $isStrict = true) {
 
 };
 
+function digit_validator($number) {
+    if (is_numeric($number)) return true;
+        else return false;
+};
+
+function email_validator($email, $host = null) {
+    $email = trim($email);
+
+    $isEmail = false;
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $isEmail = true;
+        if ($host) {
+            //domain validation
+            $emaildomain = explode('@', $email);
+            if (!strcmp($emaildomain[1], $host)) return true;
+                else return false;
+        }
+    }
+    return $isEmail;
+};
+
 //получить координаты по названию города и страны
 function geocode ($address) {
     $url = "https://nominatim.openstreetmap.org/search?q=" . $address['city'] . ",%20" . $address['country'] . "&format=json&limit=1";
