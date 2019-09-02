@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    image: php:7.3.7-apache
+    container_name: php
+    ports:
+      - 8080:80
+    volumes:
+      - ./src:/var/www/html
