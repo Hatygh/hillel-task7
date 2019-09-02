@@ -85,10 +85,16 @@ function between_validator($number, array $array, bool $isStrict = true) {
 
     // @TODO запихнуть это все в трай кетч
 
-    if (count($array) != 2) return "В массиве должно быть два элемента";
+    if (count($array) != 2) {
+        throw new Exception('В массиве должно быть два элемента');
+        //return false;
+    }
 
     foreach ($array as $num) {
-        if (!is_numeric($num)) return "В массиве должны быть только числа";
+        if (!is_numeric($num)) {
+            throw new Exception('В массиве должны быть только числа');
+            //return false;
+        }
     }
 
     sort($array);
