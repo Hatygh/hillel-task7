@@ -49,6 +49,8 @@ if (!empty($_POST)) {
 
     $interests = $_POST['interests'];
 
+    echo string_length_validator('basfda', 7, 7);
+
 //    echo "<pre>";
 //    var_dump($_POST);
 //    echo "</pre>";

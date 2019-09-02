@@ -128,12 +128,38 @@ function email_validator($email, $host = null) {
         $isEmail = true;
         if ($host) {
             //domain validation
-            $emaildomain = explode('@', $email);
-            if (!strcmp($emaildomain[1], $host)) return true;
+            $exploded_email = explode('@', $email);
+            if (!strcmp($exploded_email[1], $host)) return true;
                 else return false;
         }
     }
     return $isEmail;
+};
+
+function string_length_validator($str, int $minlength, int $maxlength) {
+    $length = strlen($str);
+    if ( ($length >= $minlength) && ($length <= $maxlength) )
+        return true;
+    else
+        return false;
+};
+
+function in_validator($value, array $array) {
+    if (in_array($value, $array))
+        return true;
+    else
+        return false;
+};
+
+function identical_validator($first_value, $second_value) {
+    if (!strcmp($first_value, $second_value))
+        return true;
+    else
+        return false;
+};
+
+function uri_validator($url) {
+
 };
 
 //получить координаты по названию города и страны
