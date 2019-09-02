@@ -84,16 +84,17 @@ function period($start_date, $end_date)
 function between_validator($number, array $array, bool $isStrict = true) {
 
     // @TODO запихнуть это все в трай кетч
-    if ($array.count() != 2) return "sovsem ofigeli";
 
-    $array = $array.sort();
+    if (count($array) != 2) return "В массиве должно быть два элемента";
 
-    // $todo проверить че там с другими системами исчисления
-    if (is_numeric($array[0])) $min = $array[0];
-        else return "sovsem ofigeli";
+    foreach ($array as $num) {
+        if (!is_numeric($num)) return "В массиве должны быть только числа";
+    }
 
-    if (is_numeric($array[1])) $max = $array[1];
-        else return "sovsem ofigeli";
+    sort($array);
+
+    $min = $array[0];
+    $max = $array[1];
 
     if ($isStrict && ( $number == $min || $number == $max )) {
         return true;
@@ -108,6 +109,7 @@ function between_validator($number, array $array, bool $isStrict = true) {
 
 };
 
+//получить координаты по названию города и страны
 function geocode ($address) {
     $url = "https://nominatim.openstreetmap.org/search?q=" . $address['city'] . ",%20" . $address['country'] . "&format=json&limit=1";
 

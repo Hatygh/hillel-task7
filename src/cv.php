@@ -49,6 +49,9 @@ if (!empty($_POST)) {
 
     $interests = $_POST['interests'];
 
+    $a = between_validator(188, [100, 0x539], 0);
+    echo 'result: ' . $a;
+
 //    echo "<pre>";
 //    var_dump($_POST);
 //    echo "</pre>";
@@ -61,13 +64,3 @@ else {
     echo 'Something gone wrong';
 }
 
-
-//
-//$interests = [
-//    'Economics',
-//    'Psychology',
-//    'Mixology',
-//    'Chess',
-    //    'Serfing',
-//    'Marketing',
-//];
