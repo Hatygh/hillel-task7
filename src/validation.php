@@ -159,8 +159,19 @@ function identical_validator($first_value, $second_value) {
 };
 
 function uri_validator($url) {
-
+    if (!filter_var($url, FILTER_VALIDATE_URL))
+        return true;
+    else
+        return false;
 };
+
+function not_empty_validator($value) {
+    return empty($value);
+}
+
+function date_validator($date) {
+
+}
 
 //получить координаты по названию города и страны
 function geocode ($address) {
