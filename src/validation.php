@@ -170,7 +170,10 @@ function not_empty_validator($value) {
 }
 
 function date_validator($date) {
-
+    if (strtotime($date))
+        return true;
+    else
+        return false;
 }
 
 //получить координаты по названию города и страны
