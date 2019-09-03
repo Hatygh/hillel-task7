@@ -40,7 +40,7 @@
                         <label for="vacancy">Vacancy: </label>
                         <input type="text" name="vacancy" value="Bar manager"> <br>
                         <label for="image">Link to photo</label>
-                        <input type="url" name="image" value="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/08dc5673-6005-4fa8-b302-66b573530923/dd5i4ss-f916ba26-94dd-4ef8-b21f-004ffad22987.png/v1/fill/w_150,h_150,strp/cute_cthulhu_sticker_by_tardisghost_dd5i4ss-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvMDhkYzU2NzMtNjAwNS00ZmE4LWIzMDItNjZiNTczNTMwOTIzXC9kZDVpNHNzLWY5MTZiYTI2LTk0ZGQtNGVmOC1iMjFmLTAwNGZmYWQyMjk4Ny5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.9AV2M_W2obwwS6jpQ4b0COenGn87MEBq4I5MC2WMmFE">
+                        <input type="text" name="image" value="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/08dc5673-6005-4fa8-b302-66b573530923/dd5i4ss-f916ba26-94dd-4ef8-b21f-004ffad22987.png/v1/fill/w_150,h_150,strp/cute_cthulhu_sticker_by_tardisghost_dd5i4ss-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvMDhkYzU2NzMtNjAwNS00ZmE4LWIzMDItNjZiNTczNTMwOTIzXC9kZDVpNHNzLWY5MTZiYTI2LTk0ZGQtNGVmOC1iMjFmLTAwNGZmYWQyMjk4Ny5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.9AV2M_W2obwwS6jpQ4b0COenGn87MEBq4I5MC2WMmFE">
                         <br>
                         <label for="resume">Few words about yourself</label>
                         <textarea name="resume">Few words about yourself</textarea>
@@ -48,9 +48,9 @@
                     <fieldset>
                         <legend>Contacts</legend>
                         <label for="contacts[email]">Email: </label>
-                        <input type="email" name="contacts[email]" value="johndoe@gmail.com">
+                        <input type="text" name="contacts[email]" value="johndoe@gmail.com">
                         <label for="contacts[phone]">Phone: </label>
-                        <input type="tel" name="contacts[phone]" value="0043312436">
+                        <input type="text" name="contacts[phone]" value="0043312436">
                         <label for="contacts[skype]">Skype: </label>
                         <input type="text" name="contacts[skype]" value="johndoe"> <br>
                         <label for="address[city]">City: </label>
@@ -68,9 +68,9 @@
                                 <label for="experiences[<?= $i ?>][place]">Place: </label>
                                 <input type="text" name="experiences[<?= $i ?>][place]" value="Some place <?= $i ?>"> <br>
                                 <label for="experiences[<?= $i ?>][start_date]">Start date: </label>
-                                <input type="date" name="experiences[<?= $i ?>][start_date]" value="2013-06-01">
+                                <input type="text" name="experiences[<?= $i ?>][start_date]" value="2013-06-01">
                                 <label for="experiences[<?= $i ?>][end_date]">End date: </label>
-                                <input type="date" name="experiences[<?= $i ?>][end_date]" value="2016-12-01"> <br>
+                                <input type="text" name="experiences[<?= $i ?>][end_date]" value="2016-12-01"> <br>
                                 <fieldset>
                                     <legend>Address</legend>
                                     <label for="experiences[<?= $i ?>][address][city]">City: </label>
@@ -92,11 +92,11 @@
                                     <label for="experiences[<?= $i ?>][lastname]">Lastname: </label>
                                     <input type="text" name="experiences[<?= $i ?>][lastname]" value="Scarlett"> <br>
                                     <label for="experiences[<?= $i ?>][contacts][email]">Email: </label>
-                                    <input type="email" name="experiences[<?= $i ?>][contacts][email]" value="vince@scarlett.com"> <br>
+                                    <input type="text" name="experiences[<?= $i ?>][contacts][email]" value="vince@scarlett.com"> <br>
                                     <label for="experiences[<?= $i ?>][contacts][phone]">Phone: </label>
-                                    <input type="tel" name="experiences[<?= $i ?>][contacts][phone]" value="0021213235"> <br>
+                                    <input type="text" name="experiences[<?= $i ?>][contacts][phone]" value="0021213235"> <br>
                                     <label for="experiences[<?= $i ?>][contacts][skype]">Email: </label>
-                                    <input type="skype" name="experiences[<?= $i ?>][contacts][skype]" value="vincescarlett"> <br>
+                                    <input type="text" name="experiences[<?= $i ?>][contacts][skype]" value="vincescarlett"> <br>
                                 </fieldset>
                             </fieldset>
                         <?php endfor; ?>
@@ -107,7 +107,7 @@
                             <label for="skills[<?= $i ?>][skill]">Skill: </label>
                             <input type="text" name="skills[<?= $i ?>][skill]" value="Skill <?= $i ?>">
                             <label for="skills[<?= $i ?>][profi]">Value from 0 to 100</label>
-                            <input type="number" name="skills[<?= $i ?>][profi]" min="0" max="100" value="<?= (80 + 2*$i) ?>"> <br>
+                            <input type="text" name="skills[<?= $i ?>][profi]" min="0" max="100" value="<?= (80 + 2*$i) ?>"> <br>
                         <?php endfor; ?>
                     </fieldset>
                     <fieldset>
@@ -116,9 +116,9 @@
                             <label for="sertificates[<?= $i ?>][title]">Title: </label>
                             <input type="text" name="sertificates[<?= $i ?>][title]" value="Foundation Leadership Program Certificate"> <br>
                             <label for="sertificates[<?= $i ?>][start_date]">Start date: </label>
-                            <input type="date" name="sertificates[<?= $i ?>][start_date]" value="2016-01-01"> <br>
+                            <input type="text" name="sertificates[<?= $i ?>][start_date]" value="2016-01-01"> <br>
                             <label for="sertificates[<?= $i ?>][end_date]">End date</label>
-                            <input type="date" name="sertificates[<?= $i ?>][end_date]" value="2016-01-01"> <br>
+                            <input type="text" name="sertificates[<?= $i ?>][end_date]" value="2016-01-01"> <br>
                             <label for="sertificates[<?= $i ?>][title]">Comment: </label>
                             <input type="text" name="sertificates[<?= $i ?>][title]" value="By CSE EMTW Education institute"> <br>
                         <?php endfor; ?>
@@ -130,9 +130,9 @@
                         <label for="education[profession]">Profession</label>
                         <input type="text" name="education[profession]" value="Service Management"> <br>
                         <label for="education[start_date]">Start_date</label>
-                        <input type="date" name="education[start_date]" value="2005-08-01">
+                        <input type="text" name="education[start_date]" value="2005-08-01">
                         <label for="education[end_date]">End_date</label>
-                        <input type="date" name="education[end_date]" value="2008-08-01">
+                        <input type="text" name="education[end_date]" value="2008-08-01">
                     </fieldset>
                     <fieldset>
                         <legend>Languages</legend>

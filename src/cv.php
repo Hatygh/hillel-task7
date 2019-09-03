@@ -49,7 +49,6 @@ if (!empty($_POST)) {
 
     $interests = $_POST['interests'];
 
-    //echo date_validator('32 april 1980');
 
 //    echo "<pre>";
 //    var_dump($_POST);
