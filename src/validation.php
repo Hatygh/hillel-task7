@@ -4,7 +4,8 @@ function diffDate($start_date, $end_date)
 {
 
     if ( (!$start_date) or (!$end_date) ) {
-        return 'That was not a timestamp';
+        //return 'That was not a timestamp';
+        return false;
     }
 
     if ($start_date > $end_date) {
@@ -12,7 +13,7 @@ function diffDate($start_date, $end_date)
     };
 
     if ($start_date == $end_date) {
-        return 'Just a second';
+        return 'всего несколько секунд';
     };
 
     $local = [
@@ -81,62 +82,51 @@ function period($start_date, $end_date)
     return $result;
 };
 
-function between_validator($number, array $array, bool $isStrict = true) {
+function between_validator($number, array $array, bool $isStrict = true): bool {
 
-    // @TODO запихнуть это все в трай кетч
-
-    if (count($array) != 2) {
-        throw new Exception('В массиве должно быть два элемента');
-        //return false;
-    }
+    if (count($array) != 2)
+        return false;
 
     foreach ($array as $num) {
-        if (!is_numeric($num)) {
-            throw new Exception('В массиве должны быть только числа');
-            //return false;
-        }
+        if (!is_numeric($num))
+            return false;
     }
 
     sort($array);
 
-    $min = $array[0];
-    $max = $array[1];
+    list($min, $max) = $array;
 
-    if ($isStrict && ( $number == $min || $number == $max )) {
+    if ($isStrict && ( $number == $min || $number == $max ))
         return true;
-    }
 
-    if ( $number > $min && $number < $max) {
+    if ( $number > $min && $number < $max)
         return true;
-    }
-    else {
+    else
         return false;
-    }
-
 };
 
-function digit_validator($number) {
-    if (is_numeric($number)) return true;
-        else return false;
+function digit_validator($number): bool {
+    return is_numeric($number);
 };
 
-function email_validator($email, $host = null) {
+function email_validator($email, $host = null): bool {
     $email = trim($email);
 
     $isEmail = false;
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $isEmail = true;
+
+        //domain validation
         if ($host) {
-            //domain validation
             $exploded_email = explode('@', $email);
             if (!strcmp($exploded_email[1], $host)) return true;
-                else return false;
+                else $isEmail = false;
         }
     }
     return $isEmail;
 };
 
-function string_length_validator($str, int $minlength, int $maxlength) {
+function string_length_validator($str, int $minlength, int $maxlength): bool {
     $length = strlen($str);
     if ( ($length >= $minlength) && ($length <= $maxlength) )
         return true;
@@ -144,36 +134,24 @@ function string_length_validator($str, int $minlength, int $maxlength) {
         return false;
 };
 
-function in_validator($value, array $array) {
-    if (in_array($value, $array))
-        return true;
-    else
-        return false;
+function in_validator($value, array $array): bool {
+     return in_array($value, $array);
 };
 
-function identical_validator($first_value, $second_value) {
-    if (!strcmp($first_value, $second_value))
-        return true;
-    else
-        return false;
+function identical_validator($first_value, $second_value): bool {
+    return !strcmp($first_value, $second_value);
 };
 
-function uri_validator($url) {
-    if (!filter_var($url, FILTER_VALIDATE_URL))
-        return true;
-    else
-        return false;
+function uri_validator($url): bool {
+    return filter_var($url, FILTER_VALIDATE_URL);
 };
 
-function not_empty_validator($value) {
-    return empty($value);
+function not_empty_validator($value): bool {
+    return !empty($value);
 }
 
-function date_validator($date) {
-    if (strtotime($date))
-        return true;
-    else
-        return false;
+function date_validator($date): bool {
+    return strtotime($date);
 }
 
 //получить координаты по названию города и страны

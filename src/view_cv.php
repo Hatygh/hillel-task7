@@ -1,8 +1,8 @@
 <?php
-
-require_once('validation.php');
-
-?>
+//
+//require_once('validation.php');
+//
+//?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +34,9 @@ require_once('validation.php');
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <a href="index.php">Edit</a>
-            </div>
+<!--            <div class="col-sm-12">-->
+<!--                <a href="index.php">Edit</a>-->
+<!--            </div>-->
         </div>
         <div class="row">
             <div class="col-sm-2">
